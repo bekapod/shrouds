@@ -1,3 +1,6 @@
 import component from "./component";
 
-document.body.appendChild(component());
+(async () => {
+  const $component = await component();
+  $(".js-insert-component").append($component);
+})();

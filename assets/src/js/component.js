@@ -1,5 +1,5 @@
-export default (text = "Hello World") => {
-  const element = document.createElement("div");
-  element.innerHTML = text;
-  return element;
+export default async (text = "Hello World") => {
+  const $element = $("<div />");
+  $element.text(text);
+  return $element;
 };
