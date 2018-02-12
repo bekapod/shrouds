@@ -4,7 +4,7 @@ module.exports = () => ({
   module: {
     rules: [
       {
-        test: /\.(png|jpg|gif)$/,
+        test: /\.(png|jpg|jpeg|gif)$/,
         use: {
           loader: "url-loader",
           options: {
@@ -16,5 +16,5 @@ module.exports = () => ({
     ]
   },
 
-  plugins: [new ImageminPlugin({ test: /\.(jpg|png|gif)$/i })]
+  plugins: [new ImageminPlugin({ test: /\.(jpg|jpeg|png|gif)$/i })]
 });

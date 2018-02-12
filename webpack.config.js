@@ -25,8 +25,8 @@ const commonConfig = env =>
     {
       entry: {
         global: ["babel-polyfill", PATHS.js],
-        styles: PATHS.styles
-        // svg: PATHS.svg
+        styles: PATHS.styles,
+        svg: PATHS.svg
       },
 
       output: {

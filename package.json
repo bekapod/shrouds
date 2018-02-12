@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --watch webpack.config.js --watch webpack --exec \"webpack --env.VM=http://project.local.url/ --env.target=development --watch --progress\"",
+    "start": "nodemon --watch webpack.config.js --watch webpack --exec \"webpack --env.VM=http://127.0.0.1:8080/ --env.target=development --watch --progress\"",
     "build": "webpack --env.target=production",
-    "lint-webpack-config": "eslint webpack.config.js webpack/**/*.js"
+    "lint-webpack-config": "eslint webpack.config.js webpack/**/*.js",
+    "start-server": "http-server"
   },
   "keywords": [],
   "author": "",
@@ -55,5 +56,9 @@
     "webpack-bundle-analyzer": "^2.10.0",
     "webpack-merge": "^4.1.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "http-server": "^0.11.1",
+    "jquery": "^3.3.1",
+    "normalize.css": "^8.0.0"
+  }
 }

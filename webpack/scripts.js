@@ -1,3 +1,4 @@
+const webpack = require("webpack");
 const NpmInstallPlugin = require("npm-install-webpack-plugin");
 
 module.exports = ({ include }) => ({
@@ -11,5 +12,11 @@ module.exports = ({ include }) => ({
     ]
   },
 
-  plugins: [new NpmInstallPlugin()]
+  plugins: [
+    new NpmInstallPlugin(),
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery"
+    })
+  ]
 });

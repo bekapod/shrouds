@@ -1,5 +1,37 @@
+@import "~normalize.css/normalize.css";
+
 $white: #fff;
 
+@font-face {
+  font-family: "Open Sans";
+  src: url("../fonts/OpenSans-Regular-webfont.woff") format("woff");
+}
+
 body {
+  font-family: "Open Sans", serif;
   background: $white;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.loading-icon {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-right: 1em;
+  background-image: url("../images/loading-icon.gif");
+}
+
+.large-image {
+  display: block;
+  width: 640px;
+  height: 480px;
+  margin-bottom: 1em;
+  background-image: url("../images/large-image.jpeg");
+}
+
+.pokemon {
+  width: 150px;
 }

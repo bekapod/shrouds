@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="manifest" href="site.webmanifest">
+        <link rel="apple-touch-icon" href="icon.png">
+        <link rel="stylesheet" href="assets/dist/styles.css">
+    </head>
+    <body>
+        <h1>Webpack Starter - Test Project</h1>
+        <p>To start, run <code>npm install</code> then <code>npm run start-server</code> (start-server wouldn't be required on a normal project) and then <code>npm start</code>.</p>
+        <h2>Images</h2>
+        <p><span class="loading-icon"></span> This loading icon gif is small, so webpack should inline a base64 version of the image.</p>
+        <p><span class="large-image"></span> This image is quite large so webpack should just minify it and move it to the dist dir, referencing the actual file in the css.</p>
+
+        <h2>CSS</h2>
+        <p>If everything else works ok on this page then that means CSS bundling is working correctly.</p>
+
+        <h2>Scripts</h2>
+        <p>If javascript bundling is working, the next line below this should say "Hello World".</p>
+        <p class="js-insert-component"></p>
+
+        <h2>SVG</h2>
+        <p>If svg bundling is working, you should see some pokemon below.</p>
+        <p>
+            <svg class="pokemon"><use xlink:href="#pikachu"></use></svg>
+            <svg class="pokemon"><use xlink:href="#eevee"></use></svg>
+        </p>
+
+        <h2>Fonts</h2>
+        <p>If font bundling is working correctly, the text on this page should be displayed in Open Sans (if it's not working then font will be in a serif font).</p>
+        <script src="assets/dist/vendor.bundle.js" defer></script>
+        <script src="assets/dist/global.bundle.js" defer></script>
+    </body>
+</html>
