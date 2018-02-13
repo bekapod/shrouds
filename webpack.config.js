@@ -16,7 +16,8 @@ const minifyPlugin = require("./webpack/minify");
 const PATHS = {
   js: path.join(__dirname, "assets/src/js"),
   styles: path.join(__dirname, "assets/src/css/main.scss"),
-  svg: glob.sync(path.join(__dirname, "assets/src/svg/**/*.svg")),
+  images: glob.sync(path.join(__dirname, "assets/src/images/**/*")),
+  svg: glob.sync(path.join(__dirname, "assets/src/svg/**/*")),
   dist: path.join(__dirname, "assets/dist")
 };
 
@@ -26,6 +27,7 @@ const commonConfig = env =>
       entry: {
         global: ["babel-polyfill", PATHS.js],
         styles: PATHS.styles
+        // images: PATHS.images,
         // svg: PATHS.svg
       },
 
