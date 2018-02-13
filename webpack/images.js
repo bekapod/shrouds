@@ -8,7 +8,7 @@ module.exports = () => ({
         use: {
           loader: "url-loader",
           options: {
-            limit: 15000,
+            limit: 1,
             name: "images/[name].[ext]"
           }
         }
