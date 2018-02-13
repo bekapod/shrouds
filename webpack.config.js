@@ -4,6 +4,7 @@ const webpack = require("webpack");
 const merge = require("webpack-merge");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
+const WebpackShellPlugin = require("webpack-shell-plugin");
 const browserSyncPlugin = require("./webpack/browserSync");
 const stylesPlugin = require("./webpack/styles");
 const imagesPlugin = require("./webpack/images");
@@ -20,6 +21,15 @@ const PATHS = {
   svg: glob.sync(path.join(__dirname, "assets/src/svg/**/*")),
   dist: path.join(__dirname, "assets/dist")
 };
+
+const extraneousFiles = [
+  "images.bundle.js",
+  "images.bundle.js.map",
+  "styles.bundle.js",
+  "styles.bundle.js.map",
+  "svg.bundle.js",
+  "svg.bundle.js.map"
+].map(file => `${PATHS.dist}/${file}`);
 
 const commonConfig = env =>
   merge([
@@ -43,6 +53,9 @@ const commonConfig = env =>
         }),
         new webpack.DefinePlugin({
           "process.env.NODE_ENV": JSON.stringify(env.target)
+        }),
+        new WebpackShellPlugin({
+          onBuildEnd: extraneousFiles.map(file => `rm -f ${file}`)
         })
       ]
     },
